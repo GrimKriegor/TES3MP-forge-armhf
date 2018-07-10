@@ -1,0 +1,16 @@
+sudo: required
+services:
+  - docker
+language: bash
+script:
+  - docker run --rm --privileged multiarch/qemu-user-static:register --reset
+  - /bin/bash pre-build.sh
+  - docker build -t grimkriegor/tes3mp-forge-armhf .
+  - >
+    if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+      docker login -u="$DOCKERHUB_USER" -p="$DOCKERHUB_PASS"
+      TAG=$(grep "ENV TES3MP_VERSION" Dockerfile | awk 'NF>1{print $NF}')
+      docker tag grimkriegor/tes3mp-forge-armhf grimkriegor/tes3mp-forge-armhf:$TAG
+      docker push grimkriegor/tes3mp-forge-armhf:$TAG
+      docker push grimkriegor/tes3mp-forge-armhf
+    fi
