@@ -4,4 +4,4 @@
 
 <grimkriegor@krutt.org>
 
-[Main repository](https://github.com/grimkriegor/TES3MP-forge)
+ARM version of [TES3MP-forge](https://github.com/grimkriegor/TES3MP-forge)
