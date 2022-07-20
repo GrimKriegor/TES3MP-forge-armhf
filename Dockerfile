@@ -5,7 +5,7 @@ LABEL description="A container to simplify the packaging of TES3MP for GNU/Linux
 
 ENV FORGE_VERSION 1.1.0
 
-COPY tmp/qemu-arm-static /usr/bin/qemu-arm-static
+#COPY tmp/qemu-arm-static /usr/bin/qemu-arm-static
 
 RUN apt-get update \
     && apt-get -y install \
