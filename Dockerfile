@@ -19,10 +19,7 @@ RUN apt-get update \
         libunshield-dev \
         libncurses5-dev \
         libluajit-5.1-dev \
-        libboost-filesystem-dev \
-        libboost-thread-dev \
-        libboost-program-options-dev \
-        libboost-system-dev
+        libboost-all-dev
 
 RUN git clone --depth 1 https://github.com/OpenMW/osg.git /tmp/osg \
     && cd /tmp/osg \
