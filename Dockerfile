@@ -11,6 +11,7 @@ RUN apt-get update \
         git \
         wget \
         lsb-release \
+        liblz4-dev \
         unzip \
         cmake \
         libopenal-dev \
